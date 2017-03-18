@@ -1,0 +1,32 @@
+Version 5.4:
+~ Changed the URL for the dashboard because Microsoft does not redirect links properly
+
+Version 5.3:
++ New way to sign in to a Microsoft account in the program
++ You can now open a single search by double clicking one of the search terms
+
+Version 5.2:
++ Randomized words for mobile searches
++ Update check is now done after searches are complete
++ All browser windows are closed after search completes
+
+Make sure you install the Microsoft Rewards extension for Edge for extra points this month
+
+Version 5.1:
++ Microsoft Rewards Dashboard now opens in Microsoft Edge for extra points
++ User agent string for desktop searches is now an Edge User Agent String
+	- This *may* result in more points for using Edge, but it might not work
+
+Version 5.0:
++ Updated for the new Microsoft Rewards. No functionality was changed, but things are worded differently.
+	- Replaced "credits" with "points"
+	- Multiplied points by 10 in all UI windows to match the change
+	- Updated dashboard link to https://account.microsoft.com/rewards/dashboard
+	- Replaced Bing branding with Microsoft branding
+**IMPORTANT**
+To earn points for searching with the new Microsoft Rewards, you *MUST* click the "Click Here to Log In to the Web Browser with your Microsoft Account" button and sign in again.
+
+**YOU MUST** click the check box to "Keep Me Logged In" otherwise the browser will log you out each time you open the program.
+
+If your version is less than 3.0, updating automatically will not work
+If your version is less than 4.7, updating automatically will not work ONLY IF the path to the .exe file contains a space

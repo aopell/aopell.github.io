@@ -1,0 +1,168 @@
+@font-face {
+	font-family: SegoeUILight;
+	src: url(/segoeuil.ttf);
+}
+
+body {
+    background-color: #2676bc;
+    overflow-x: auto;
+}
+
+.content {
+    padding-left: 103px;
+    padding-right: 128px;
+    padding-top: 0px;
+}
+
+.header {
+    height: 150px;
+    top: 0;
+    width: 100%;
+    background-color: #2676bc;
+    color: #3498db;
+    font-family: SegoeUILight;
+    font-weight: lighter;
+}
+
+.tile {
+    border: 2px solid #2676bc;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+    display: table-cell;
+    position: relative;
+    float: left;
+    width: 190px;
+    height: 192px;
+    font-family: SegoeUILight;
+    font-weight: lighter;
+}
+
+.tile:hover {
+    border: 2px solid white;
+}
+
+.tile:active {
+    border: 2px solid #2676bc;
+}
+
+.wide {
+    width: 384px;
+    height: 192px;
+}
+
+.large {
+    width: 384px;
+    height: 394px;
+}
+
+a {
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    font-weight: lighter;
+    text-decoration: underline;
+}
+
+.pagetitle {
+    color: white;
+    width: auto;
+    font-size: 64px;
+    display: inline-block;
+    font-family: SegoeUILight;
+    font-weight: lighter;
+}
+
+.grouptitle {
+    color: white;
+    width: 100%;
+    font-size: 24px;
+    font-family: SegoeUILight;
+    font-weight: lighter;
+}
+
+.tilegroup {
+    display: table-cell;
+    padding-left: 25px;
+    width: 200px;
+}
+
+.tilesubtitle {
+    color: white;
+    font-size: 16px;
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+    padding-bottom: 8px;
+    width: auto;
+    margin-left: 8px;
+}
+
+.right {
+    right: 0;
+    margin-right: 8px;
+}
+
+.infobutton {
+    padding: 40px 28px 28px 28px;
+    position: absolute; 
+    top: 0;
+}
+
+.tiletext {
+    color: white;
+    font-size: 16px;
+    margin: 0;
+    width: auto;
+    margin-right: 16px;
+    font-family: SegoeUILight;
+    font-weight: lighter;
+    padding-left: 8px;
+    padding-top: 8px;
+}
+
+.tiletitle {
+    font-size: 24px;
+    padding-top: 16px;
+}
+
+.two {
+    width: 388px;
+}
+
+.three {
+    width: 582px;
+}
+
+.four {
+    width: 776px;
+}
+
+/*  --------------------------------
+    ANIMATIONS
+    -------------------------------- */
+
+.m-scene .scene_element {
+  animation-duration: 1.25s;
+  transition-timing-function: ease-in;
+  animation-fill-mode: both;
+}
+
+.m-scene .scene_element--fadein {
+  animation-name: fadeIn;
+}
+
+.m-scene.is-exiting .scene_element {
+  animation-direction: alternate-reverse;
+}
+
+/*
+ * Keyframes
+ */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}

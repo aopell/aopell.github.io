@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rhyskit</title>
+</head>
+<body>
+    <h2>Total Score: </h2><p id="totalScore">000</p>
+    <h3>Round Score: </h3><p id="roundScore">000</p>
+    <p><input type="button" id="button1" value="Risk It" onclick="riskIt()"/></p>
+    <p><input type="button" id="button2" value="Keep Points" onclick="keepIt()"/></p>
+    <p><textarea id="scoreView" style="width:100px; height:300px">Scores:</textarea></p>
+
+    <script>
+
+        var score = 0;
+        var round = 0;
+        var rounds = 0;
+
+
+        function riskIt() {
+            if (button1.value == "Play Again" || button1.value == "Start Game") {
+                round = 0;
+                score = 0;
+                rounds = 0;
+                roundScore.innerHTML = "000";
+                totalScore.innerHTML = "000";
+                scoreView.innerHTML = "Scores:";
+                button1.value = "Risk It";
+                roundScore.style.color = "black";
+                roundScore.style.fontWeight = "normal";
+                return;
+            }
+            else if (button1.value == "Next Round") {
+                round = 0;
+                button1.value = "Risk It";
+                roundScore.innerHTML = "000";
+                rounds++;
+                roundScore.style.color = "black";
+                roundScore.style.fontWeight = "normal";
+                return;
+            }
+
+            button1.value = "Risk It";
+
+            round += Math.floor((Math.random() * 66) + 1);
+            roundScore.innerHTML = round;
+
+            if (round > 100) {
+                score -= (round - 100);
+                scoreView.innerHTML += "\n" + (100 - round);
+                totalScore.innerHTML = score;
+                button1.value = "Next Round";
+                roundScore.style.color = "red";
+                roundScore.style.fontWeight = "normal";
+            }
+            else if (round == 100) {
+                roundScore.style.color = "#009900";
+                roundScore.style.fontWeight = "bold";
+            }
+            else if (round >= 90 && round < 100) {
+                roundScore.style.color = "#009900";
+                roundScore.style.fontWeight = "normal";
+            }
+        }
+
+        function keepIt() {
+            if (round < 1 || round > 100) {
+                return;
+            }
+
+            if (round <= 100 && round > 0) {
+                scoreView.innerHTML += "\n" + round;
+                score += round;
+                totalScore.innerHTML = score;
+                button1.value = "Next Round";
+            }
+            if (score >= 500) {
+                rounds++;
+                roundScore.innerHTML = "WINNER - " + rounds + " ROUNDS";
+                button1.value = "Play Again";
+            }
+
+            round = 0;
+        }
+    </script>
+</body>
+</html>
