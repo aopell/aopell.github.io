@@ -1,13 +1,7 @@
 PATCH HIGHLIGHTS
-Auto Updating
-- Added auto updating
+Version Number
+- You can now see the current version number
 
 GENERAL UPDATES
-Accounts
-- You can create and log into accounts
-Games
-- You can add games
 
 BUG FIXES
-- The refresh button works now
-- The view games button doesn't work now
