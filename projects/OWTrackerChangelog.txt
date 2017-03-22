@@ -1,0 +1,13 @@
+PATCH HIGHLIGHTS
+Auto Updating
+- Added auto updating
+
+GENERAL UPDATES
+Accounts
+- You can create and log into accounts
+Games
+- You can add games
+
+BUG FIXES
+- The refresh button works now
+- The view games button doesn't work now
