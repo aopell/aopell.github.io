@@ -1,7 +1,12 @@
 PATCH HIGHLIGHTS
-Version Number
-- You can now see the current version number
+Viewing and Editing Games
+  - You can now view and edit games by double clicking the game in the recent games list
 
 GENERAL UPDATES
+About Screen
+  - Added an about screen when F1 is pressed on the main overview window
+  - When opening the about screen, the program checks for updates
+Update Available Window
+  - Added a progress bar in the update available window when an update is downloading
 
 BUG FIXES
