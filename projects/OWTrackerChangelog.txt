@@ -1,12 +1,14 @@
 PATCH HIGHLIGHTS
-Viewing and Editing Games
-  - You can now view and edit games by double clicking the game in the recent games list
+New Look!
+   - The Career Profile screen has been redesigned!
+More Stats!
+   - Even more statistics!
+Season Selection
+   - Select the season you want to view
 
 GENERAL UPDATES
-About Screen
-  - Added an about screen when F1 is pressed on the main overview window
-  - When opening the about screen, the program checks for updates
-Update Available Window
-  - Added a progress bar in the update available window when an update is downloading
+Automatic Scaling
+   - The window scales (mostly) when you resize it
 
 BUG FIXES
+   - Many
