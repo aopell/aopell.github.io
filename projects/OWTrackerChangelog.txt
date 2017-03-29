@@ -1,14 +1,11 @@
 PATCH HIGHLIGHTS
-New Look!
-   - The Career Profile screen has been redesigned!
-More Stats!
-   - Even more statistics!
-Season Selection
-   - Select the season you want to view
+Sharing Profiles
+   - You can now see read only versions of your friends' profiles by typing their username with no password in the login window
 
 GENERAL UPDATES
-Automatic Scaling
-   - The window scales (mostly) when you resize it
+Logout
+   - You can log out by clicking the leftwards facing arrow button in the top left
 
 BUG FIXES
-   - Many
+   - Fixed a bug where the current SR icon would show the icon for the most recent game even when the season was switched
+   - Many more
