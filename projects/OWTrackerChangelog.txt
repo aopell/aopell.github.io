@@ -1,11 +1,10 @@
 PATCH HIGHLIGHTS
-Sharing Profiles
-   - You can now see read only versions of your friends' profiles by typing their username with no password in the login window
+View Games
+   - You can now view a history of your games by clicking View Games
 
 GENERAL UPDATES
-Logout
-   - You can log out by clicking the leftwards facing arrow button in the top left
+Recent Games List
+   - Recent game tiles have been resized slightly
 
 BUG FIXES
-   - Fixed a bug where the current SR icon would show the icon for the most recent game even when the season was switched
-   - Many more
+   - (Hopefully) fixed the loading bar when updating (will take effect next update)
