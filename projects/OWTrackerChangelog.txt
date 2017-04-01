@@ -1,11 +1,7 @@
 PATCH HIGHLIGHTS
-Visual Redesign
-   - New tab interface (much like Overwatch's tabs)
+Graphs
+   - New graphs tab with 3 different graphs
 
 GENERAL UPDATES
-Recent Games List
-   - Recent game tiles have been resized slightly (again)
 
 BUG FIXES
-   - When refreshing the games list, duplicates aren't added
-   - When adding a game, the default season is the season of the most recent game before it
