@@ -1,10 +1,11 @@
 PATCH HIGHLIGHTS
-View Games
-   - You can now view a history of your games by clicking View Games
+Visual Redesign
+   - New tab interface (much like Overwatch's tabs)
 
 GENERAL UPDATES
 Recent Games List
-   - Recent game tiles have been resized slightly
+   - Recent game tiles have been resized slightly (again)
 
 BUG FIXES
-   - (Hopefully) fixed the loading bar when updating (will take effect next update)
+   - When refreshing the games list, duplicates aren't added
+   - When adding a game, the default season is the season of the most recent game before it
