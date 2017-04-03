@@ -13,4 +13,5 @@ GENERAL UPDATES
 
 BUG FIXES
    - 2.0.2: Fixed bug causing a crash when clearing filters
+   - 2.0.3: Skill rating change was not properly calculated on refresh or when a game was added
    - Many
