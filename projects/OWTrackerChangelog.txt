@@ -12,4 +12,5 @@ GENERAL UPDATES
    - Changed "Last 6 Hours" to "Last 12 Hours"
 
 BUG FIXES
+   - 2.0.2: Fixed bug causing a crash when clearing filters
    - Many
