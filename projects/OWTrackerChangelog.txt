@@ -1,7 +1,15 @@
 PATCH HIGHLIGHTS
-Graphs
-   - New graphs tab with 3 different graphs
+   - Filter Games
+     - You can now filter games based on lots of different options
+     - View stats for the games that fit the filters
 
 GENERAL UPDATES
+   - Renamed the wins per day graph to "Game Results Per Day" and centered it on y=0
+   - Added SR decay button to the toolbar if skill rating is over 3000
+   - Added tooltips to various GUI elements
+     - Hover over best map and best hero to see win percentages
+     - Hover over most played map and hero to see number of games
+   - Changed "Last 6 Hours" to "Last 12 Hours"
 
 BUG FIXES
+   - Many
