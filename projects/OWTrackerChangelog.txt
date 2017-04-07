@@ -1,10 +1,17 @@
+/!\ IMPORTANT /!\
+KNOWN BUGS FOR ALL VERSIONS
+   - If refresh is pressed many times in rapid succession, memory usage spikes drastically. DO NOT SPAM REFRESH, it can use hundreds of megabytes of RAM. I'm looking into this.
+
 PATCH HIGHLIGHTS
-   - Results Per Map Graph
-     - New bar graph for game results per map
+   - Results Per Hero Graph
+     - New bar graph for game results per hero
+   - Win Rate Graph
+     - See how your win rate decreased D: over time
 
 GENERAL UPDATES
-   - Skill Rating Icon
-     - Now shows the icon of your current season tier even if you dropped out of it
+   - Added a line graph of total games played to results per map and hero graphs
+     - This can be removed if it isn't liked
+   - General speed improvements
 
 BUG FIXES
    - Fixed a bug where the SR decay button did not disappear when SR dropped below 3000
