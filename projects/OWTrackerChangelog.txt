@@ -3,16 +3,13 @@ KNOWN BUGS FOR ALL VERSIONS
    - If refresh is pressed many times in rapid succession, memory usage spikes drastically. DO NOT SPAM REFRESH, it can use hundreds of megabytes of RAM. I'm looking into this.
 
 PATCH HIGHLIGHTS
-   - New Add Game Window
-     - Brand new add game window designed by Jozsef
-   - Delete Games
-     - You can now delete games by selecting them in the list and pressing delete or backspace
+   - Competitive Points
+     - The application can now track competitive points! Enter the number of points you currently have in the textbox next to your current rank and hit refresh
 
 GENERAL UPDATES
-   - Added vertical lines on line graphs showing all games when season changes
-   - Removed the line showing total games played from bar graphs
+   - The "last 12 hours" change in rank now automatically refreshes each minute
+   - When adding a placement game, you are now asked for the result (win/loss/draw) for stats purposes
 
 BUG FIXES
-   - Fixed a bug where "Red Values Ignored" appeared when the provided time value was valid instead of when it was invalid
-   - Number of seconds now has a leading zero if under 10 in update game dialog
-   - Average rank change per game in the view games screen now shows three decimal places
+   - Fixed a bug causing the win rate graph to be backwards
+   - "+0 last 12 hours" is no longer displayed when no games have been played in the last 12 hours
