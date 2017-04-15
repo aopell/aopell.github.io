@@ -1,15 +1,14 @@
-/!\ IMPORTANT /!\
-KNOWN BUGS FOR ALL VERSIONS
-   - If refresh is pressed many times in rapid succession, memory usage spikes drastically. DO NOT SPAM REFRESH, it can use hundreds of megabytes of RAM. I'm looking into this.
 
 PATCH HIGHLIGHTS
-   - Competitive Points
-     - The application can now track competitive points! Enter the number of points you currently have in the textbox next to your current rank and hit refresh
+   - Settings
+     - Auto login, change username and password, etc.
+   - Player Icon
+     - Add your BattleTag in settings to see your player icon on your profile
 
 GENERAL UPDATES
-   - The "last 12 hours" change in rank now automatically refreshes each minute
-   - When adding a placement game, you are now asked for the result (win/loss/draw) for stats purposes
+   - Tool tip on the date part of a game tile shows full date and time of the game
+   - Code performance improvements
 
 BUG FIXES
-   - Fixed a bug causing the win rate graph to be backwards
-   - "+0 last 12 hours" is no longer displayed when no games have been played in the last 12 hours
+   - Fixed a bug preventing end of season comeptitive point bonuses from being added correctly
+   - Fixed more bugs too probably. (Also probably created more bugs - you know how it is).
