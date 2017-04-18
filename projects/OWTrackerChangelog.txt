@@ -1,14 +1,10 @@
 
 PATCH HIGHLIGHTS
-   - Settings
-     - Auto login, change username and password, etc.
-   - Player Icon
-     - Add your BattleTag in settings to see your player icon on your profile
+   - Visual Redesign
+     - Added a background image and made menus blue to match Overwatch's design
 
 GENERAL UPDATES
-   - Tool tip on the date part of a game tile shows full date and time of the game
-   - Code performance improvements
+   - You can now right click on drop down menus in the View Games window to reset their values
 
 BUG FIXES
-   - Fixed a bug preventing end of season comeptitive point bonuses from being added correctly
-   - Fixed more bugs too probably. (Also probably created more bugs - you know how it is).
+   - Fixed a bug preventing the updating of games
