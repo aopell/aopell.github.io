@@ -1,1 +1,1 @@
-2.6.5.11-https://s3-us-west-1.amazonaws.com/aopell/OverwatchTracker/OverwatchTrackerInstaller.exe
+2.6.5.11-http://tinyurl.com/k2ydc2d
