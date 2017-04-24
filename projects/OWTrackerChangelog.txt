@@ -3,9 +3,12 @@ PATCH HIGHLIGHTS
 
 GENERAL UPDATES
    - You can now hover over the change since placement to see your placement rank
+   - The save settings button now shows that you saved settings
+   - Now hosting releases on Amazon S3
 
 BUG FIXES
    - Fixed a bug causing "DEFEAT" to be the wrong red color when updating games
    - Fixed a bug causing text in some drop-down menus to be black instead of white
    - Fixed a bug graphs to behave strangely when attempting to pan, zoom, or scroll
    - Version 2.6.3.5: Fixed a bug that broke settings
+   - Version 2.6.5.11: Fixed a bug preventing logging in
