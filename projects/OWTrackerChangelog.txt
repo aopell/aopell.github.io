@@ -1,10 +1,10 @@
-
 PATCH HIGHLIGHTS
-   - Visual Redesign
-     - Added a background image and made menus blue to match Overwatch's design
+   - Bug fixes
 
 GENERAL UPDATES
-   - You can now right click on drop down menus in the View Games window to reset their values
+   - You can now hover over the change since placement to see your placement rank
 
 BUG FIXES
-   - Fixed a bug preventing the updating of games
+   - Fixed a bug causing "DEFEAT" to be the wrong red color when updating games
+   - Fixed a bug causing text in some drop-down menus to be black instead of white
+   - Fixed a bug graphs to behave strangely when attempting to pan, zoom, or scroll
