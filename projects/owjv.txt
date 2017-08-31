@@ -1,1 +1,1 @@
-1.2-https://github.com/aopell/OWTrackerJson/releases/download/v1.2/OverwatchTrackerInstaller.exe
+1.3-https://github.com/aopell/OWTrackerJson/releases/download/v1.3/OverwatchTrackerInstaller.exe
