@@ -1,3 +1,9 @@
+Version 5.5
++ Mobile search term list now regenerates when checking and unchecking the associated checkbox
++ Added 5 additional searches to mobile search because points weren't counting sometimes
+~ Changed the default search delay to 1.5 seconds
+~ Changed the method of picking search terms for mobile search to be more random
+
 Version 5.4:
 ~ Changed the URL for the dashboard because Microsoft does not redirect links properly
 
