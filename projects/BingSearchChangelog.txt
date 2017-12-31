@@ -1,3 +1,7 @@
+Version 5.6
++ Added more search terms to desktop search
++ Increased number of word possibilities for mobile search
+
 Version 5.5
 + Mobile search term list now regenerates when checking and unchecking the associated checkbox
 + Added 5 additional searches to mobile search because points weren't counting sometimes
