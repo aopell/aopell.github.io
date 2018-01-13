@@ -1,3 +1,6 @@
+Version 5.7
+~ Changed mobile user agent to mimic the Edge mobile browser
+
 Version 5.6
 + Added more search terms to desktop search
 + Increased number of word possibilities for mobile search
