@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="/css/materialize.min.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="/css/style.css" media="screen,projection" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+    <header class="z-depth-1">
+        <div class="indigo pre-header">
+            <h3 class="white-text center header">Hello, I'm Aaron</h3>
+            <h6 class="center white-text header">I'm a student and developer with a passion for design and UX</h6>
+        </div>
+        <nav class="indigo z-depth-0">
+            <div class="nav-wrapper">
+                <div class="brand-logo center">
+                    <ul class="right hide-on-med-and-down tabs tabs-transparent">
+                        <li class="tab">
+                            <a class="active" target="_self" href="index.html">Showcase</a>
+                        </li>
+                    </ul>
+                </div>
+                <a href="#" data-target="side-nav" class="sidenav-trigger">
+                    <i class="material-icons">menu</i>
+                </a>
+
+                <ul class="sidenav" id="side-nav">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main class="container">
+        <h1 class="indigo-text">Showcase</h1>
+        <h4 class="">Here are some of my projects</h4>
+
+        <div class="row">
+            <div class="col s12 m6 l4">
+                <div class="large card hoverable">
+                    <div class="card-image">
+                        <img class="materialboxed" src="imgs/botball.png">
+                    </div>
+                    <div class="card-content">
+                        <h5 class="card-header blue-text">NHHS Botball Website</h5>
+                        <p>The website for the North Hollywood High School Botball team. Written in HTML and CSS using the Materialize
+                            CSS framework.</p>
+                    </div>
+                    <div class="card-action">
+                        <a target="_blank" class="blue-text" href="http://nohobotball.org">Visit</a>
+                        <a target="_blank" class="black-text" href="https://github.com/NHHSBotball/nhhsbotball.github.io">Github</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s12 m6 l4">
+                <div class="large card hoverable">
+                    <div class="card-image">
+                        <img class="materialboxed" src="/imgs/alarm.png">
+                    </div>
+                    <div class="card-content">
+                        <h5 class="card-header red-text text-lighten-2">Fire Alarm Monitor</h5>
+                        <p>Interface for browsing real time fire alarm data from North Hollywood High School. Written in HTML, CSS, and JavaScript without the use of any frameworks.</p>
+                    </div>
+                    <div class="card-action">
+                        <a target="_blank" class="red-text text-lighten-2" href="https://vectorblog.github.io/FireAlarmWidget/calendar/calendar.html">Visit</a>
+                        <a target="_blank" class="black-text" href="https://github.com/VectorBlog/FireAlarmWidget">Github</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s12 m6 l4">
+                <div class="large card hoverable">
+                    <div class="card-image">
+                        <img class="materialboxed" src="imgs/schoology.png">
+                    </div>
+                    <div class="card-content">
+                        <h5 class="blue-text text-darken-3 card-header">Schoology Plus</h5>
+                        <p>Web extension providing enhancements to the web interface of the Schoology learning management system. Written in CSS and JavaScript for Chrome (other browsers coming soon).</p>
+                    </div>
+                    <div class="card-action">
+                        <a target="_blank" class="blue-text text-darken-3" href="https://chrome.google.com/webstore/detail/schoology-plus/fbfppoaockpecjpbdmldojdehdpepfef">Visit</a>
+                        <a target="_blank" class="black-text" href="https://github.com/aopell/SchoologyPlus">Github</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script>
+        var sNav = document.querySelector('.sidenav');
+        var sNavInstance = M.Sidenav.init(sNav);
+    </script>
+</body>
+
+</html>

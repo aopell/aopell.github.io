@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="/css/materialize.min.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="/css/style.css" media="screen,projection" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+    <header>
+        <nav class="indigo">
+            <div class="nav-wrapper">
+                <div class="brand-logo center">
+                    <ul class="right hide-on-med-and-down">
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="index.html">Thing 1</a>
+                        </li>
+                    </ul>
+                </div>
+                <a href="#" data-target="side-nav" class="sidenav-trigger">
+                    <i class="material-icons">menu</i>
+                </a>
+
+                <ul class="sidenav" id="side-nav">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main class="container">
+        <h1 class="header">Hello world</h1>
+        <h4 class="header">This is a subtitle</h4>
+    </main>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script>
+        var elem = document.querySelector('.sidenav');
+        var instance = M.Sidenav.init(elem);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+.no-margin {
+    margin: 0;
+}
+
+.pre-header {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.nav-wrapper li>a {
+    font-weight: bold;
+}
+
+.card-header {
+    margin-top: 0;
+    font-weight: 500;
+}
+
+.card-action > a {
+    font-weight: 500;
+}
