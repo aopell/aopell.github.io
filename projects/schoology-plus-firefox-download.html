@@ -1,0 +1,16 @@
+<html>
+
+<body>
+    <script>
+        fetch("https://api.github.com/repos/aopell/SchoologyPlus/releases/latest")
+            .then(x => x.json())
+            .then(x => {
+                location.href = x.assets[0].browser_download_url;
+                setTimeout(() => window.close(), 2000);
+            });
+    </script>
+    <img src="https://imgur.com/QdAPxXN.png"/>
+    <h2 style="font-family: sans-serif">Starting Schoology Plus Firefox download...</h2>
+</body>
+
+</html>
