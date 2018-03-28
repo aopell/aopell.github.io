@@ -1,0 +1,159 @@
+var output = document.getElementById("json-output");
+for (let e of document.querySelectorAll("#theme-options input")) {
+    e.addEventListener("input", function (event) {
+        updateOutput(event.target);
+    });
+}
+
+const lausdImageUrl = "https://cdn3-6.cdn.schoology.com/system/files/imagecache/node_themes/sites/all/themes/schoology_theme/node_themes/424392825/BrandingUpdateLAUSD_59d2b7fc44916.png";
+
+var themeName = document.getElementById("theme-name");
+var themeHue = document.getElementById("theme-hue");
+var themePrimaryColor = document.getElementById("theme-primary-color");
+var themeSecondaryColor = document.getElementById("theme-secondary-color");
+var themeBackgroundColor = document.getElementById("theme-background-color");
+var themeBorderColor = document.getElementById("theme-border-color");
+var themeSchoologyLogo = document.getElementById("theme-schoology-logo");
+var themeLAUSDLogo = document.getElementById("theme-lausd-logo");
+var themeCustomLogo = document.getElementById("theme-custom-logo");
+var themeLogo = document.getElementById("theme-logo");
+var themeCursor = document.getElementById("theme-cursor");
+
+var previewNavbar = document.getElementById("preview-navbar");
+var previewLogo = document.getElementById("preview-logo");
+
+function updateOutput(target) {
+    let warnings = [];
+    let errors = [];
+
+    let hue = undefined;
+    let theme = {
+        name: themeName.value || undefined,
+    }
+
+    if ((hue = Number.parseFloat(themeHue.value)) || hue === 0) {
+        theme.hue = hue;
+        setCSSVariable("color-hue", hue);
+    } else {
+        setCSSVariable("color-hue", 210);
+    }
+
+    switch (target) {
+        case themeSchoologyLogo:
+            theme.logo = "schoology";
+            themeLogo.setAttribute("disabled", "");
+            setCSSVariable("background-url", "none");
+            previewLogo.classList.add("hide-background-image");
+            previewLogo.classList.remove("custom-background-image");
+            break;
+        case themeLAUSDLogo:
+            theme.logo = "lausd";
+            themeLogo.setAttribute("disabled", "");
+            setCSSVariable("background-url", `url(${lausdImageUrl})`);
+            previewLogo.classList.remove("hide-background-image");
+            previewLogo.classList.add("custom-background-image");
+            break;
+        case themeCustomLogo:
+            themeLogo.removeAttribute("disabled");
+            break;
+    }
+
+    if (themeCustomLogo.checked) {
+        if (!themeLogo.value || !themeLogo.checkValidity()) {
+            errors.push("Logo URL is invalid");
+            setCSSVariable("background-url", "none");
+            previewLogo.classList.add("hide-background-image");
+            previewLogo.classList.remove("custom-background-image");
+        } else {
+            theme.logo = themeLogo.value;
+            setCSSVariable("background-url", `url(${theme.logo})`);
+            previewLogo.classList.remove("hide-background-image");
+            previewLogo.classList.add("custom-background-image");
+        }
+    }
+
+
+    if (themeCursor.value) {
+        if (!themeCursor.checkValidity()) {
+            errors.push("Cursor URL is invalid");
+            setCSSVariable("cursor", "auto");
+        } else {
+            theme.cursor = themeCursor.value;
+            setCSSVariable("cursor", `url(${themeCursor.value}), auto`);
+        }
+    }
+
+    if (!theme.name) {
+        errors.push("Theme must have a name")
+    }
+
+    if (theme.hue && (theme.hue < 0 || theme.hue > 359 || theme.hue != Math.floor(theme.hue))) {
+        warnings.push("Hue should be a positive integer between 0 and 359");
+    }
+
+    let colors = [
+        themePrimaryColor.value || undefined,
+        themeBackgroundColor.value || undefined,
+        themeSecondaryColor.value || undefined,
+        themeBorderColor.value || undefined
+    ];
+
+    let colorMappings = ["primary-color", "primary-light", "primary-dark", "primary-very-dark"];
+
+    let valid = true;
+    let validCount = 0;
+    for (let i = 0; i < colors.length; i++) {
+        if (!validateColor(colors[i])) {
+            valid = false;
+            document.documentElement.style.removeProperty(`--${colorMappings[i]}`);
+        } else {
+            validCount++;
+            setCSSVariable(colorMappings[i], colors[i]);
+        }
+    }
+
+    if (valid && validCount > 0) {
+        theme.colors = colors;
+    } else if (validCount > 0 && colors.filter(x => x).length == colors.length) {
+        errors.push("One or more of your specified colors is invalid");
+    } else if (validCount > 0) {
+        warnings.push("All four colors must be specified")
+    }
+
+    if (theme.colors && theme.hue) {
+        warnings.push("Your specified hue value will be overridden by your other color choices");
+    }
+
+    output.value = JSON.stringify(theme, null, "\t");
+
+    let warningCard = document.getElementById("warning-card");
+    if (warnings.length > 0) {
+        warningCard.style.display = "block";
+        document.getElementById("warning-content").innerHTML = warnings.join("<br/>");
+    } else {
+        warningCard.style.display = "none";
+    }
+
+    let errorCard = document.getElementById("error-card");
+    if (errors.length > 0) {
+        errorCard.style.display = "block";
+        document.getElementById("error-content").innerHTML = errors.join("<br/>");
+    } else {
+        errorCard.style.display = "none";
+    }
+
+    M.updateTextFields();
+    M.textareaAutoResize(output);
+}
+
+function validateColor(c) {
+    var ele = document.createElement("div");
+    ele.style.color = c;
+    return ele.style.color.split(/\s+/).join('').toLowerCase();
+}
+
+function setCSSVariable(name, val) {
+    document.documentElement.style.setProperty(`--${name}`, val);
+}
+
+updateOutput(document.rootElement);

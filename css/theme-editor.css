@@ -1,0 +1,140 @@
+:root {
+    --color-hue: 210;
+    --primary-color: hsl(var(--color-hue), 50%, 50%);
+    --primary-light: hsl(var(--color-hue), 60%, 55%);
+    --primary-dark: hsl(var(--color-hue), 55%, 40%);
+    --primary-very-dark: hsl(var(--color-hue), 90%, 50%);
+    --cursor: auto;
+    --background-url: none;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+.splus-blue {
+    background-color: hsl(210, 50%, 50%)
+}
+
+.splus-blue-text {
+    color: hsl(210, 50%, 50%)
+}
+
+.inline-icon {
+    vertical-align: bottom;
+    font-size: 24px !important;
+}
+
+#preview {
+    cursor: var(--cursor);
+}
+
+#preview-navbar {
+    width: 100%;
+    line-height: 45px;
+    height: 45px;
+    background-color: var(--primary-color);
+}
+
+#preview-navbar a {
+    font-family: "Lucida Grande", Tahoma, Verdana, Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    padding-left: 10px;
+    padding-right: 10px;
+    cursor: pointer;
+}
+
+#preview-logo {
+    margin-left: 2%;
+    width: 160px;
+    height: 36px;
+    margin-top: 4.5px;
+    cursor: pointer;
+}
+
+#preview-logo.custom-background-image {
+    background: var(--background-url) no-repeat 0px 0px !important;
+}
+
+#preview-logo.hide-background-image {
+    background: none !important;
+}
+
+#preview-logo.hide-background-image svg {
+    visibility: visible !important;
+}
+
+#preview-logo svg {
+    visibility: hidden !important;
+}
+
+#preview-splus-settings {
+    margin-top: 10.5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+#preview-settings {
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--primary-dark);
+    margin-top: 7.5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: var(--primary-light);
+    cursor: pointer;
+}
+
+#preview-settings:hover {
+    background-color: var(--primary-dark);
+}
+
+.wide-container {
+    max-width: unset !important;
+}
+
+.navbar-links {
+    margin-left: calc(180px + 2%);
+}
+
+.dropdown {
+    background: url(https://lms.lausd.net/sites/all/themes/schoology_theme/images/btn-sprite.png?5ab95b9010366eec) no-repeat -3px -599px;
+    display: inline-block;
+    height: 12px;
+    width: 12px;
+    position: relative;
+    top: -6px;
+    left: 8px;
+    margin: 0;
+    background-position: -4px -601px;
+}
+
+
+/* .white-links a {
+    color: white;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 14.5px;
+    padding-bottom: 14.5px;
+
+    height: 45px;
+    max-height: 45px;
+    line-height: 14px;
+}*/
+
+#preview-navbar a:hover {
+    background-color: var(--primary-dark);
+}
+
+@media screen and (min-width: 993px) {
+    .wide-container {
+        width: 80%;
+    }
+    .fixed-on-large-and-up {
+        position: fixed;
+        width: 60%;
+    }
+}
