@@ -4,6 +4,7 @@ for (let e of document.querySelectorAll("#theme-options input")) {
         updateOutput(event.target);
     });
 }
+M.Tabs.init(document.querySelector(".tabs"));
 
 const lausdImageUrl = "https://cdn3-6.cdn.schoology.com/system/files/imagecache/node_themes/sites/all/themes/schoology_theme/node_themes/424392825/BrandingUpdateLAUSD_59d2b7fc44916.png";
 
@@ -18,24 +19,35 @@ var themeLAUSDLogo = document.getElementById("theme-lausd-logo");
 var themeCustomLogo = document.getElementById("theme-custom-logo");
 var themeLogo = document.getElementById("theme-logo");
 var themeCursor = document.getElementById("theme-cursor");
+var themeColorHue = document.getElementById("theme-color-hue");
+var themeColorCustom = document.getElementById("theme-color-custom");
 
 var previewNavbar = document.getElementById("preview-navbar");
 var previewLogo = document.getElementById("preview-logo");
 
-function updateOutput(target) {
-    let warnings = [];
-    let errors = [];
+let warnings = [];
+let errors = [];
+let theme = {};
 
+function updateOutput(target) {
+    warnings = [];
+    errors = [];
     let hue = undefined;
-    let theme = {
+    theme = {
         name: themeName.value || undefined,
     }
 
-    if ((hue = Number.parseFloat(themeHue.value)) || hue === 0) {
-        theme.hue = hue;
-        setCSSVariable("color-hue", hue);
-    } else {
-        setCSSVariable("color-hue", 210);
+    if (!theme.name) {
+        errors.push("Theme must have a name")
+    }
+
+    if (themeColorHue.checked) {
+        if ((hue = Number.parseFloat(themeHue.value)) || hue === 0) {
+            theme.hue = hue;
+            setCSSVariable("color-hue", hue);
+        } else {
+            setCSSVariable("color-hue", 210);
+        }
     }
 
     switch (target) {
@@ -56,92 +68,119 @@ function updateOutput(target) {
         case themeCustomLogo:
             themeLogo.removeAttribute("disabled");
             break;
+        case themeColorHue:
+            themeHue.removeAttribute("disabled");
+            themePrimaryColor.setAttribute("disabled", "");
+            themeSecondaryColor.setAttribute("disabled", "");
+            themeBorderColor.setAttribute("disabled", "");
+            themeBackgroundColor.setAttribute("disabled", "");
+            break;
+        case themeColorCustom:
+            themeHue.setAttribute("disabled", "");
+            themePrimaryColor.removeAttribute("disabled");
+            themeSecondaryColor.removeAttribute("disabled");
+            themeBorderColor.removeAttribute("disabled");
+            themeBackgroundColor.removeAttribute("disabled");
+            break;
     }
 
-    if (themeCustomLogo.checked) {
-        if (!themeLogo.value || !themeLogo.checkValidity()) {
-            errors.push("Logo URL is invalid");
-            setCSSVariable("background-url", "none");
-            previewLogo.classList.add("hide-background-image");
-            previewLogo.classList.remove("custom-background-image");
-        } else {
+    if (themeCustomLogo.checked && themeLogo.value) {
+        checkImage(themeLogo.value, (x) => {
+            if (x.target.width != 160 || x.target.height != 36) {
+                warnings.push("Logo image is not the recommended size of 160x36");
+            }
             theme.logo = themeLogo.value;
             setCSSVariable("background-url", `url(${theme.logo})`);
             previewLogo.classList.remove("hide-background-image");
             previewLogo.classList.add("custom-background-image");
-        }
+            updatePreview();
+        }, (x) => {
+            errors.push("Logo URL is invalid");
+            setCSSVariable("background-url", "none");
+            previewLogo.classList.add("hide-background-image");
+            previewLogo.classList.remove("custom-background-image");
+            updatePreview();
+        });
+    } else if (themeCustomLogo.checked) {
+        errors.push("No logo URL specified");
     }
 
 
     if (themeCursor.value) {
-        if (!themeCursor.checkValidity()) {
-            errors.push("Cursor URL is invalid");
-            setCSSVariable("cursor", "auto");
-        } else {
+        checkImage(themeCursor.value, (x) => {
+            if(x.target.width > 128 || x.target.height > 128) {
+                warnings.push("Cursor images must be smaller than 128x128 to appear");
+            }
             theme.cursor = themeCursor.value;
             setCSSVariable("cursor", `url(${themeCursor.value}), auto`);
-        }
-    }
-
-    if (!theme.name) {
-        errors.push("Theme must have a name")
+            updatePreview();
+        }, (x) => {
+            errors.push("Cursor URL is invalid");
+            setCSSVariable("cursor", "auto");
+            updatePreview();
+        });
     }
 
     if (theme.hue && (theme.hue < 0 || theme.hue > 359 || theme.hue != Math.floor(theme.hue))) {
         warnings.push("Hue should be a positive integer between 0 and 359");
     }
 
-    let colors = [
-        themePrimaryColor.value || undefined,
-        themeBackgroundColor.value || undefined,
-        themeSecondaryColor.value || undefined,
-        themeBorderColor.value || undefined
-    ];
+    if (themeColorCustom.checked) {
+        let colors = [
+            themePrimaryColor.value || undefined,
+            themeBackgroundColor.value || undefined,
+            themeSecondaryColor.value || undefined,
+            themeBorderColor.value || undefined
+        ];
 
-    let colorMappings = ["primary-color", "primary-light", "primary-dark", "primary-very-dark"];
+        let colorMappings = ["primary-color", "primary-light", "primary-dark", "primary-very-dark"];
 
-    let valid = true;
-    let validCount = 0;
-    for (let i = 0; i < colors.length; i++) {
-        if (!validateColor(colors[i])) {
-            valid = false;
-            document.documentElement.style.removeProperty(`--${colorMappings[i]}`);
-        } else {
-            validCount++;
-            setCSSVariable(colorMappings[i], colors[i]);
+        let valid = true;
+        let validCount = 0;
+        for (let i = 0; i < colors.length; i++) {
+            if (!validateColor(colors[i])) {
+                valid = false;
+                document.documentElement.style.removeProperty(`--${colorMappings[i]}`);
+            } else {
+                validCount++;
+                setCSSVariable(colorMappings[i], colors[i]);
+            }
+        }
+
+        if (valid && validCount > 0) {
+            theme.colors = colors;
+        } else if (validCount > 0 && colors.filter(x => x).length == colors.length) {
+            errors.push("One or more of your specified colors is invalid");
+        } else if (validCount > 0) {
+            warnings.push("All four colors must be specified")
+        }
+
+        if (theme.colors && theme.hue) {
+            warnings.push("Your specified hue value will be overridden by your other color choices");
         }
     }
 
-    if (valid && validCount > 0) {
-        theme.colors = colors;
-    } else if (validCount > 0 && colors.filter(x => x).length == colors.length) {
-        errors.push("One or more of your specified colors is invalid");
-    } else if (validCount > 0) {
-        warnings.push("All four colors must be specified")
-    }
+    updatePreview();
+}
 
-    if (theme.colors && theme.hue) {
-        warnings.push("Your specified hue value will be overridden by your other color choices");
-    }
-
+function updatePreview() {
     output.value = JSON.stringify(theme, null, "\t");
-
     let warningCard = document.getElementById("warning-card");
     if (warnings.length > 0) {
         warningCard.style.display = "block";
         document.getElementById("warning-content").innerHTML = warnings.join("<br/>");
-    } else {
+    }
+    else {
         warningCard.style.display = "none";
     }
-
     let errorCard = document.getElementById("error-card");
     if (errors.length > 0) {
         errorCard.style.display = "block";
         document.getElementById("error-content").innerHTML = errors.join("<br/>");
-    } else {
+    }
+    else {
         errorCard.style.display = "none";
     }
-
     M.updateTextFields();
     M.textareaAutoResize(output);
 }
@@ -150,6 +189,13 @@ function validateColor(c) {
     var ele = document.createElement("div");
     ele.style.color = c;
     return ele.style.color.split(/\s+/).join('').toLowerCase();
+}
+
+function checkImage(imageSrc, validCallback, invalidCallback) {
+    var img = new Image();
+    img.onload = validCallback;
+    img.onerror = invalidCallback;
+    img.src = imageSrc;
 }
 
 function setCSSVariable(name, val) {
