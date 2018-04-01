@@ -6,7 +6,7 @@ for (let e of document.querySelectorAll("#theme-options input")) {
 }
 M.Tabs.init(document.querySelector(".tabs"));
 
-const lausdImageUrl = "https://cdn3-6.cdn.schoology.com/system/files/imagecache/node_themes/sites/all/themes/schoology_theme/node_themes/424392825/BrandingUpdateLAUSD_59d2b7fc44916.png";
+const lausdImageUrl = "https://cdn.schoology.com/system/files/imagecache/node_themes/sites/all/themes/schoology_theme/node_themes/424392825/BrandingUpdateLAUSD_59d2b7fc44916.png";
 
 var themeName = document.getElementById("theme-name");
 var themeHue = document.getElementById("theme-hue");
@@ -138,18 +138,20 @@ function updateOutput(target) {
         let valid = true;
         let validCount = 0;
         for (let i = 0; i < colors.length; i++) {
-            if (!validateColor(colors[i])) {
+            let cc = validateColor(colors[i]);
+            if (!cc) {
                 valid = false;
                 document.documentElement.style.removeProperty(`--${colorMappings[i]}`);
             } else {
                 validCount++;
-                setCSSVariable(colorMappings[i], colors[i]);
+                setCSSVariable(colorMappings[i], cc);
+                colors[i] == cc;
             }
         }
 
         if (valid && validCount > 0) {
             theme.colors = colors;
-        } else if (validCount > 0 && colors.filter(x => x).length == colors.length) {
+        } else if (colors.filter(x => x).length > 0) {
             errors.push("One or more of your specified colors is invalid");
         } else if (validCount > 0) {
             warnings.push("All four colors must be specified")
