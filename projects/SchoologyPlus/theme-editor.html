@@ -51,7 +51,7 @@
                             <input id="theme-color-hue" class="with-gap" name="color-group" type="radio" checked />
                             <span>Color Hue</span>
                         </label>
-                        <div class="input-field col s12">
+                        <div class="input-field col s12" id="theme-hue-wrapper">
                             <input id="theme-hue" type="number" class="validate" min="0" max="359">
                             <label for="theme-hue">Color Hue</label>
                         </div>
@@ -61,21 +61,23 @@
                             <input id="theme-color-custom" class="with-gap" name="color-group" type="radio" />
                             <span>Custom Colors</span>
                         </label>
-                        <div class="input-field col s12 m6">
-                            <input id="theme-primary-color" type="text" class="validate" disabled>
-                            <label for="theme-primary-color">Primary Color</label>
-                        </div>
-                        <div class="input-field col s12 m6">
-                            <input id="theme-secondary-color" type="text" class="validate" disabled>
-                            <label for="theme-secondary-color">Hover Color</label>
-                        </div>
-                        <div class="input-field col s12 m6">
-                            <input id="theme-background-color" type="text" class="validate" disabled>
-                            <label for="theme-background-color">Background Color</label>
-                        </div>
-                        <div class="input-field col s12 m6">
-                            <input id="theme-border-color" type="text" class="validate" disabled>
-                            <label for="theme-border-color">Border Color</label>
+                        <div id="theme-color-custom-wrapper" class="hidden">
+                            <div class="input-field col s12 m6">
+                                <input id="theme-primary-color" type="text" class="validate" disabled>
+                                <label for="theme-primary-color">Primary Color</label>
+                            </div>
+                            <div class="input-field col s12 m6">
+                                <input id="theme-secondary-color" type="text" class="validate" disabled>
+                                <label for="theme-secondary-color">Hover Color</label>
+                            </div>
+                            <div class="input-field col s12 m6">
+                                <input id="theme-background-color" type="text" class="validate" disabled>
+                                <label for="theme-background-color">Background Color</label>
+                            </div>
+                            <div class="input-field col s12 m6">
+                                <input id="theme-border-color" type="text" class="validate" disabled>
+                                <label for="theme-border-color">Border Color</label>
+                            </div>
                         </div>
                     </p>
                 </div>
@@ -98,7 +100,7 @@
                             <input id="theme-custom-logo" class="with-gap" name="logo-group" type="radio" />
                             <span>Custom Image</span>
                         </label>
-                        <div class="input-field col s12">
+                        <div id="theme-logo-wrapper" class="input-field col s12 hidden">
                             <input id="theme-logo" type="url" class="validate" disabled>
                             <label for="theme-logo">Logo Image URL</label>
                         </div>

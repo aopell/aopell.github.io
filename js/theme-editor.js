@@ -21,6 +21,9 @@ var themeLogo = document.getElementById("theme-logo");
 var themeCursor = document.getElementById("theme-cursor");
 var themeColorHue = document.getElementById("theme-color-hue");
 var themeColorCustom = document.getElementById("theme-color-custom");
+var themeColorCustomWrapper = document.getElementById("theme-color-custom-wrapper");
+var themeHueWrapper = document.getElementById("theme-hue-wrapper");
+var themeLogoWrapper = document.getElementById("theme-logo-wrapper");
 
 var previewNavbar = document.getElementById("preview-navbar");
 var previewLogo = document.getElementById("preview-logo");
@@ -57,6 +60,7 @@ function updateOutput(target) {
             setCSSVariable("background-url", "none");
             previewLogo.classList.add("hide-background-image");
             previewLogo.classList.remove("custom-background-image");
+            themeLogoWrapper.classList.add("hidden");
             break;
         case themeLAUSDLogo:
             theme.logo = "lausd";
@@ -64,9 +68,11 @@ function updateOutput(target) {
             setCSSVariable("background-url", `url(${lausdImageUrl})`);
             previewLogo.classList.remove("hide-background-image");
             previewLogo.classList.add("custom-background-image");
+            themeLogoWrapper.classList.add("hidden");
             break;
         case themeCustomLogo:
             themeLogo.removeAttribute("disabled");
+            themeLogoWrapper.classList.remove("hidden");
             break;
         case themeColorHue:
             themeHue.removeAttribute("disabled");
@@ -74,6 +80,8 @@ function updateOutput(target) {
             themeSecondaryColor.setAttribute("disabled", "");
             themeBorderColor.setAttribute("disabled", "");
             themeBackgroundColor.setAttribute("disabled", "");
+            themeColorCustomWrapper.classList.add("hidden");
+            themeHueWrapper.classList.remove("hidden");
             break;
         case themeColorCustom:
             themeHue.setAttribute("disabled", "");
@@ -81,6 +89,8 @@ function updateOutput(target) {
             themeSecondaryColor.removeAttribute("disabled");
             themeBorderColor.removeAttribute("disabled");
             themeBackgroundColor.removeAttribute("disabled");
+            themeColorCustomWrapper.classList.remove("hidden");
+            themeHueWrapper.classList.add("hidden");
             break;
     }
 
