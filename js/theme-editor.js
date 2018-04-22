@@ -51,6 +51,11 @@ function updateOutput(target) {
         } else {
             setCSSVariable("color-hue", 210);
         }
+
+        setCSSVariable("primary-color","hsl(var(--color-hue), 50%, 50%)")
+        setCSSVariable("primary-light","hsl(var(--color-hue), 60%, 55%)")
+        setCSSVariable("primary-dark","hsl(var(--color-hue), 55%, 40%)")
+        setCSSVariable("primary-very-dark","hsl(var(--color-hue), 90%, 50%)")
     }
 
     switch (target) {
