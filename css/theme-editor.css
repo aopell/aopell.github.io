@@ -312,3 +312,7 @@ input[type=button] {
 .hidden {
     display: none;
 }
+
+#theme-color-custom-wrapper label {
+    transform: translateY(-22px) scale(0.8) !important;
+}
