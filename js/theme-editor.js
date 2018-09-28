@@ -6,6 +6,67 @@ for (let e of document.querySelectorAll("#theme-options input")) {
 }
 M.Tabs.init(document.querySelector(".tabs"));
 
+function generateWarnings(j) {
+    let w = [];
+    if (!j.name) w.push("Theme must have a name")
+    if (j.hue && Number.isNaN(Number.parseFloat(j.hue))) w.push("Value of 'hue' must be a number");
+    if (j.colors && j.colors.length != 4) w.push("There must be four colors in 'colors'");
+    if (j.colors && j.colors.map(x => !!validateColor(x)).includes(false)) w.push("One or more values of 'colors' is not a valid color");
+    return w;
+}
+
+// Import from JSON
+document.getElementById("json-output").addEventListener("input", t => {
+    errors = [];
+    warnings = [];
+    j = parseJSONObject(t.target.value);
+    if (j) {
+        warnings = generateWarnings(j)
+        if (warnings.length > 0) {
+            updatePreview(false);
+            return;
+        }
+
+        themeName.value = j.name;
+
+        themeHue.value = j.hue || "";
+        if (j.hue) themeColorHue.click();
+
+        if (j.colors) {
+            ["primary-color", "background-color", "secondary-color", "border-color"].map((x, i) => $("#theme-" + x).spectrum("set", j.colors[i]));
+            themeColorCustom.click();
+        }
+
+        if (!j.hue && !j.colors) themeColorHue.click();
+
+        if (j.logo) {
+            if (j.logo == "schoology") themeSchoologyLogo.click();
+            else if (j.logo == "lausd") themeLAUSDLogo.click();
+            else {
+                themeLogo.value = j.logo;
+                themeCustomLogo.click();
+            }
+        } else {
+            themeSchoologyLogo.click();
+        }
+
+        if (j.icons) {
+            themeIcons.value = JSON.stringify(j.icons);
+        }
+
+        themeCursor.value = j.cursor || "";
+        updateOutput(themeCursor);
+
+        M.updateTextFields();
+        M.textareaAutoResize(themeIcons);
+        updateOutput();
+    } else {
+        errors.push("The JSON you have entered is not valid");
+        updatePreview(false);
+    }
+});
+
+let init = 0;
 function initPicker(id, onupdate) {
     $(`#${id}`).spectrum({
         showInput: true,
@@ -15,6 +76,7 @@ function initPicker(id, onupdate) {
         showSelectionPalette: true,
         maxPaletteSize: 10,
         preferredFormat: "hex",
+        color: ["red", "blue", "yellow", "green"][init++],
         move: function (color) {
             onupdate(color);
         },
@@ -61,6 +123,8 @@ var themeColorCustom = document.getElementById("theme-color-custom");
 var themeColorCustomWrapper = document.getElementById("theme-color-custom-wrapper");
 var themeHueWrapper = document.getElementById("theme-hue-wrapper");
 var themeLogoWrapper = document.getElementById("theme-logo-wrapper");
+var themeIcons = document.getElementById("theme-icons");
+themeIcons.addEventListener("input", e => updateOutput(e.target));
 
 var previewNavbar = document.getElementById("preview-navbar");
 var previewLogo = document.getElementById("preview-logo");
@@ -184,13 +248,11 @@ function updateOutput(target, color) {
 
     if (themeColorCustom.checked) {
         let colors = [
-            (target === themePrimaryColor && color) ? color.toHexString() : (themePrimaryColor.value || undefined),
-            (target === themeBackgroundColor && color) ? color.toHexString() : (themeBackgroundColor.value || undefined),
-            (target === themeSecondaryColor && color) ? color.toHexString() : (themeSecondaryColor.value || undefined),
-            (target === themeBorderColor && color) ? color.toHexString() : (themeBorderColor.value || undefined),
+            (target === themePrimaryColor && color) ? color.toHexString() : (themePrimaryColor.value || "red"),
+            (target === themeBackgroundColor && color) ? color.toHexString() : (themeBackgroundColor.value || "yellow"),
+            (target === themeSecondaryColor && color) ? color.toHexString() : (themeSecondaryColor.value || "blue"),
+            (target === themeBorderColor && color) ? color.toHexString() : (themeBorderColor.value || "green"),
         ];
-
-        console.log(colors);
 
         let colorMappings = ["primary-color", "primary-light", "primary-dark", "primary-very-dark"];
 
@@ -221,11 +283,20 @@ function updateOutput(target, color) {
         }
     }
 
+    if (themeIcons.value) {
+        let j = parseJSONObject(themeIcons.value);
+        if (j) {
+            theme.icons = j;
+        } else {
+            errors.push("Value for icons is not a valid JSON object");
+        }
+    }
+
     updatePreview();
 }
 
-function updatePreview() {
-    output.value = JSON.stringify(theme, null, "\t");
+function updatePreview(updateJSON = true) {
+    if (updateJSON) output.value = JSON.stringify(theme, null, 4);
     let warningCard = document.getElementById("warning-card");
     if (warnings.length > 0) {
         warningCard.style.display = "block";
@@ -261,6 +332,16 @@ function checkImage(imageSrc, validCallback, invalidCallback) {
 
 function setCSSVariable(name, val) {
     document.documentElement.style.setProperty(`--${name}`, val);
+}
+
+function parseJSONObject(str) {
+    var isAO = (val) => val instanceof Object ? true : false;
+    try {
+        let o = JSON.parse(str);
+        return isAO(o) ? o : false;
+    } catch (e) {
+        return false;
+    }
 }
 
 updateOutput(document.rootElement);
