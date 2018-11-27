@@ -24,6 +24,20 @@
     font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif
 }
 
-.card.small .card-image + .card-content, .card.medium .card-image + .card-content, .card.large .card-image + .card-content {
+.card.small .card-image+.card-content,
+.card.medium .card-image+.card-content,
+.card.large .card-image+.card-content {
     max-height: 80%;
+}
+
+.small-bottom-margin {
+    margin-bottom: 5px;
+}
+
+.small-top-margin {
+    margin-top: 5px;
+}
+
+.tabs.tabs-transparent .tab a {
+    color: rgba(255,255,255,0.5);
 }

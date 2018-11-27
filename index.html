@@ -27,7 +27,13 @@
                 <div class="brand-logo center">
                     <ul class="right hide-on-med-and-down tabs tabs-transparent">
                         <li class="tab">
+                            <a href="https://github.com/aopell">GitHub</a>
+                        </li>
+                        <li class="tab">
                             <a class="active" target="_self" href="index.html">Showcase</a>
+                        </li>
+                        <li class="tab">
+                            <a href="resume.html">Resume</a>
                         </li>
                     </ul>
                 </div>
@@ -37,7 +43,9 @@
 
                 <ul class="sidenav" id="side-nav">
                     <li>
+                        <a href="https://github.com/aopell">GitHub</a>
                         <a href="index.html">Showcase</a>
+                        <a href="resume.html">Resume</a>
                     </li>
                 </ul>
             </div>
@@ -46,9 +54,27 @@
     <main class="container">
         <h3 class="indigo-text center">SHOWCASE</h3>
         <h5 class="center">Here are some of my projects</h5>
-        <h1></h1>
 
         <div class="row">
+            <div class="col s12 m6 l4">
+                <div class="large card hoverable">
+                    <div class="card-image">
+                        <img class="materialboxed" src="imgs/schoology.png">
+                    </div>
+                    <div class="card-content">
+                        <h5 class="blue-text text-darken-3 card-header">Schoology Plus</h5>
+                        <p>Open source web extension with <strong>over 1000 weekly users</strong> providing
+                            enhancements to the web interface of the Schoology learning
+                            management system. Written in JavaScript, CSS, and HTML for Chrome and Firefox</p>
+                    </div>
+                    <div class="card-action">
+                        <a target="_blank" class="blue-text text-darken-3" href="https://chrome.google.com/webstore/detail/schoology-plus/fbfppoaockpecjpbdmldojdehdpepfef">Chrome</a>
+                        <a target="_blank" class="blue-text text-darken-3" href="http://aopell.me/SchoologyPlus/firefox-download.html">Firefox</a>
+                        <a target="_blank" class="black-text" href="https://github.com/aopell/SchoologyPlus">Github</a>
+                    </div>
+                </div>
+            </div>
+
             <div class="col s12 m6 l4">
                 <div class="large card hoverable">
                     <div class="card-image">
@@ -56,8 +82,9 @@
                     </div>
                     <div class="card-content">
                         <h5 class="card-header blue-text">NHHS Botball Website</h5>
-                        <p>The website for the North Hollywood High School Botball team. Written in HTML and CSS using the Materialize
-                            CSS framework.</p>
+                        <p>The website for the North Hollywood High School Botball robotics team. Displays team
+                            achievements and explains the competition. Written in HTML and
+                            CSS using the Materialize CSS framework.</p>
                     </div>
                     <div class="card-action">
                         <a target="_blank" class="blue-text" href="http://nohobotball.org">Visit</a>
@@ -73,8 +100,9 @@
                     </div>
                     <div class="card-content">
                         <h5 class="card-header red-text text-lighten-2">Fire Alarm Monitor</h5>
-                        <p>Interface for browsing real time fire alarm data from North Hollywood High School. Written in HTML,
-                            CSS, and JavaScript without the use of any frameworks.</p>
+                        <p>Interface for browsing real time fire alarm data from North Hollywood High School. Written
+                            in JavaScript, CSS, and HTML without the use of any frameworks. Data is stored in a
+                            Microsoft SQL server and served with an ASP.NET Web API.</p>
                     </div>
                     <div class="card-action">
                         <a target="_blank" class="red-text text-lighten-2" href="https://vectorblog.github.io/FireAlarmWidget/calendar/calendar.html">Visit</a>
@@ -86,30 +114,14 @@
             <div class="col s12 m6 l4">
                 <div class="large card hoverable">
                     <div class="card-image">
-                        <img class="materialboxed" src="imgs/schoology.png">
-                    </div>
-                    <div class="card-content">
-                        <h5 class="blue-text text-darken-3 card-header">Schoology Plus</h5>
-                        <p>Web extension providing enhancements to the web interface of the Schoology learning management system.
-                            Written in CSS and JavaScript for Chrome (other browsers coming soon).</p>
-                    </div>
-                    <div class="card-action">
-                        <a target="_blank" class="blue-text text-darken-3" href="https://chrome.google.com/webstore/detail/schoology-plus/fbfppoaockpecjpbdmldojdehdpepfef">Chrome</a>
-                        <a target="_blank" class="blue-text text-darken-3" href="http://aopell.me/projects/schoology-plus-firefox-download.html">Firefox</a>
-                        <a target="_blank" class="black-text" href="https://github.com/aopell/SchoologyPlus">Github</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col s12 m6 l4">
-                <div class="large card hoverable">
-                    <div class="card-image">
                         <img class="materialboxed" src="imgs/discord.png">
                     </div>
                     <div class="card-content">
                         <h5 class="indigo-text text-lighten-1 card-header">Discord Bot</h5>
-                        <p>A bot providing some simple commands for the Discord chat service. Written in C# using Discord.NET,
-                            including a custom built command system.</p>
+                        <p>A bot providing some simple commands for the Discord chat service such as reminders,
+                            countdowns, and message leaderboards. Written in C# using
+                            Discord.NET, including a custom built command system using reflection and dependency
+                            injection.</p>
                     </div>
                     <div class="card-action">
                         <a target="_blank" class="black-text" href="https://github.com/aopell/DiscordBot">Github</a>
@@ -124,8 +136,10 @@
                     </div>
                     <div class="card-content">
                         <h5 class="orange-text text-darken-3 card-header">Overwatch Tracker</h5>
-                        <p>A program for tracking your Overwatch skill rating and game statistics. Written in C# using WPF without
-                            any design or control frameworks.</p>
+                        <p>A program for tracking Overwatch skill rating and game statistics. Provides an interface for
+                            viewing individual game and all time statistics with graphs and numerical data. Written in
+                            C# using
+                            WPF without any design or control frameworks.</p>
                     </div>
                     <div class="card-action">
                         <a target="_blank" class="orange-text text-darken-3" href="https://github.com/aopell/OWTrackerJson/releases/latest">Download</a>
@@ -141,9 +155,12 @@
                     </div>
                     <div class="card-content">
                         <h5 class="green-text text-darken-2 card-header">MCCBL</h5>
-                        <p>MCCBL: Minecraft Command Block Language. Written as a means of writing Minecraft commands in a text
-                            file and importing them to the game en masse. Not much of a language, and written long before
-                            the functionality was built into the game. Used to create the Transparency PVP map.</p>
+                        <p><strong>M</strong>ine<strong>c</strong>raft <strong>C</strong>ommand <strong>B</strong>lock
+                            <strong>L</strong>anguage. Written as a means of writing Minecraft commands in
+                            a text file and importing them to the game en masse. Provides command interpretation
+                            functionality to aid in designing complex maps. Used to create the <a href="https://github.com/aopell/Transparency2"
+                                target="_blank">Transparency PVP
+                                map</a>.</p>
                     </div>
                     <div class="card-action">
                         <a target="_blank" class="green-text text-darken-2" href="https://github.com/aopell/Transparency2">Example</a>
@@ -151,12 +168,25 @@
                     </div>
                 </div>
             </div>
+
+            <div class="col s12 center">
+                <h3 class="indigo-text small-bottom-margin">SEE MORE PROJECTS</h3>
+                <a href="https://github.com/aopell" target="_blank">
+                    <div>
+                        <h5 class="small-top-margin">github.com/aopell</h5>
+                        <img src="/imgs/github.png" width="100" />
+                    </div>
+                </a>
+            </div>
         </div>
     </main>
     <script type="text/javascript" src="js/materialize.min.js"></script>
     <script>
         var sNav = document.querySelector('.sidenav');
         var sNavInstance = M.Sidenav.init(sNav);
+
+        var elems = document.querySelectorAll('.materialboxed');
+        var instances = M.Materialbox.init(elems);
     </script>
 </body>
 
