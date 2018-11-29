@@ -7,6 +7,11 @@
     padding-bottom: 20px;
 }
 
+.pre-header h3 {
+    margin-top: 8px;
+    margin-bottom: 16px;
+}
+
 .nav-wrapper li>a {
     font-weight: bold;
 }
@@ -40,4 +45,22 @@
 
 .tabs.tabs-transparent .tab a {
     color: rgba(255,255,255,0.5);
+}
+
+#switch-image {
+    --hover: none;
+    --no-hover: initial;
+}
+
+#switch-image:hover {
+    --hover: initial;
+    --no-hover: none;
+}
+
+.on-hover {
+    display: var(--hover);
+}
+
+.off-hover {
+    display: var(--no-hover);
 }
