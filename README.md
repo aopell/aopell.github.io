@@ -1,4 +1,4 @@
-aopell.github.io
+aopell.github.io ([aopell.me](https://aopell.me))
 ================
 
-This is a GitHub pages website
+My GitHub Pages site with a showcase featuring some of my open source projects.
