@@ -1,0 +1,32 @@
+* {
+    font-family: sans-serif;
+}
+
+.center {
+    text-align: center;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.sides {
+    display: flex;
+    justify-content: space-between;
+}
+
+.half {
+    width: 50%;
+}
+
+header {
+
+}
+
+.section {
+
+}
+
+.item {
+
+}
