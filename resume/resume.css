@@ -33,7 +33,7 @@ header {
     background-color: var(--indigo);
     color: white;
     -webkit-print-color-adjust: exact !important;
-    padding: 20px;
+    padding: 15px;
 }
 
 header p.center {
@@ -68,7 +68,7 @@ h2 {
     color: var(--indigo);
     margin-bottom: 5px;
     font-weight: 400;
-    margin-top: 10px;
+    margin-top: -5px;
 }
 
 h3 {
@@ -95,13 +95,24 @@ li {
 }
 
 .section {
-    margin-top: 15px;
-    margin-bottom: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
-
-.item {}
 
 .item h3 {
     margin-top: 3px;
     margin-bottom: 3px;
+}
+
+#work-experience {
+    padding-top: 5px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline white;
 }
