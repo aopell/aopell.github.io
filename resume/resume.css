@@ -1,7 +1,17 @@
 @media screen {
     body {
-        margin-left: 15%;
-        margin-right: 15%;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    #main {
+        border: 1px solid #222222;
+        padding: 25px;
+    }
+}
+
+@media print {
+    body {
     }
 }
 
