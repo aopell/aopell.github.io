@@ -64,3 +64,13 @@
 .off-hover {
     display: var(--no-hover);
 }
+
+a.btn {
+    margin: 3px;
+}
+
+@media only screen and (min-width: 993px) {
+    .right-on-large-and-up {
+        text-align: right;
+    }
+}

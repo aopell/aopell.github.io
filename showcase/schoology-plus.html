@@ -8,10 +8,10 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Aaron Opell</title>
-    <meta property="og:title" content="Aaron Opell" />
+    <title>Schoology Plus - Aaron Opell</title>
+    <meta property="og:title" content="Schoology Plus - Aaron Opell" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="http://aopell.me/" />
+    <meta property="og:url" content="http://aopell.me/showcase/schoology-plus.html" />
     <meta property="og:image" content="/imgs/terminal-icon-transparent.png" />
     <meta property="og:description"
         content="Hello, I'm Aaron. I'm a student and developer with a passion for intuitive design and UX." />
@@ -60,12 +60,24 @@
         </nav>
     </header>
     <main class="container">
-        <h3 class="indigo-text center">TITLE</h3>
-        <h5 class="center">This line is the subtitle</h5>
-
-        <div class="row">
-
-            <!-- MAIN CONTENT HERE -->
+        <div class="row" style="margin-top: 20px;">
+            <div class="col l6 hide-on-med-and-down">
+                <h3 class="indigo-text" data-title></h3>
+                <h5><span data-dates></span> &bull; <span data-technologies></span></h5>
+            </div>
+            <div class="col s12 hide-on-large-only hide-on-extra-large-only">
+                <h3 class="indigo-text" data-title></h3>
+                <h5 data-dates></h5>
+                <h5 data-technologies></h5>
+            </div>
+            <div class="col s12 l6 right-on-large-and-up" style="margin-top: 1.94667rem;">
+                <span id="buttons-wrapper">
+                </span>
+            </div>
+            <div class="col s12">
+                <h5 style="font-weight: bold;" data-summary></h5>
+                <p style="font-size: 18px;" data-description></p>
+            </div>
 
             <div class="col s12 center">
                 <h3 class="indigo-text small-bottom-margin">SEE MORE PROJECTS</h3>
@@ -85,6 +97,40 @@
 
         var elems = document.querySelectorAll('.materialboxed');
         var instances = M.Materialbox.init(elems);
+
+        ((content) => {
+            for (let prop in content) {
+                if (prop == "buttons") {
+                    let wrapper = document.getElementById("buttons-wrapper");
+                    for (let button of content[prop]) {
+                        let b = document.createElement("a");
+                        b.textContent = button.text;
+                        for (let c of button.classes) {
+                            b.classList.add(c);
+                        }
+                        b.href = button.link;
+                        b.classList.add("btn", "waves-effect", "waves-light");
+                        b.target = "_blank";
+                        wrapper.appendChild(b);
+                    }
+                    continue;
+                }
+                for (let elem of document.querySelectorAll(`[data-${prop}]`)) {
+                    elem.innerHTML = content[prop];
+                }
+            }
+        })({
+            title: "SCHOOLOGY PLUS",
+            dates: "2017 - <i>present</i>",
+            technologies: "JavaScript, HTML, CSS",
+            summary: "A web extension that enhances your LAUSD Schoology experience with numerous interface improvements",
+            description: "Schoology Plus is an open source web extension providing enhancements to the web interface of the Schoology learning management system. The extension adds numerous features such as what-if grade calculations, desktop notifications, and customizable interface themes. Over 3000 weekly users from over ten schools in the Los Angeles Unifed School District use Schoology Plus to increase their productivity. Click the Github button above to view the full feature list and contribute to Schoology Plus!",
+            buttons: [
+                { classes: ["blue", "darken-3"], text: "Chrome Webstore", link: "https://chrome.google.com/webstore/detail/schoology-plus/fbfppoaockpecjpbdmldojdehdpepfef" },
+                { classes: ["orange", "darken-4"], text: "Firefox Download", link: "http://aopell.me/SchoologyPlus/firefox-download.html" },
+                { classes: ["black"], text: "Github", link: "https://github.com/aopell/SchoologyPlus" }
+            ]
+        });
     </script>
 </body>
 
