@@ -35,7 +35,7 @@ function loadData() {
         flexTransactions = [];
         mealPlanType = "Meal Plan";
 
-        let table = document.querySelector("#content_window > table > tbody > tr > td:nth-child(2) > table > tbody > tr:nth-child(2) > td > table > tbody");
+        let table = document.querySelector("#content_window > table > tbody > tr > td:nth-child(2) > table > tbody > tr:nth-child(2) > td > table > tbody") || document.querySelector("body > div > div.container.clearfix > div > div > div > div.col3 > div > table > tbody");
         let section = 0;
 
         for (let row of table.children) {
