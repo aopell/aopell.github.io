@@ -69,6 +69,21 @@ a.btn {
     margin: 3px;
 }
 
+.card.horizontal {
+    height: 120px;
+}
+
+.card.horizontal .card-image {
+    padding: 10px;
+    width: 100px;
+    height: 100px;
+}
+
+.card-stacked .card-content {
+    padding: 10px;
+    text-align: left;
+}
+
 @media only screen and (min-width: 993px) {
     .right-on-large-and-up {
         text-align: right;
