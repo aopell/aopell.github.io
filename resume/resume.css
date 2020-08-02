@@ -69,7 +69,6 @@ header p.center span:last-child {
 
 h1 {
     font-weight: 400;
-    padding-top: 5px;
     margin: 0 0 12px 0;
     font-size: 36px;
 }
@@ -125,4 +124,12 @@ a {
 
 a:hover {
     text-decoration: underline white;
+}
+
+.two-cols {
+    display: flex;
+}
+
+.item {
+    flex: 50%;
 }
