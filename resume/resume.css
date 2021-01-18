@@ -35,6 +35,10 @@
     margin-top: 3px;
 }
 
+h3.sides {
+    background-color: #e8eaf6;
+}
+
 .half {
     width: 50%;
 }
@@ -75,16 +79,22 @@ h1 {
 
 h2 {
     color: var(--indigo);
-    margin-bottom: 5px;
-    font-weight: 400;
+    margin-bottom: 0px;
+    font-weight: 600;
     margin-top: -5px;
+    font-size: 24px;
+    text-transform: uppercase;
 }
 
 h3 {
-    font-weight: 400;
+    font-weight: 700;
+    color: #2a2a2a;
 }
 
-b {}
+b {
+    font-weight: 500;
+    color: #2a2a2a;
+}
 
 p {
     margin-top: 3px;
@@ -133,3 +143,20 @@ a:hover {
 .item {
     flex: 50%;
 }
+
+.grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.bullets * {
+    display: list-item;
+    list-style-position: inside; 
+}
+
+/* .section > .item {
+    background-color: rgba(67, 80, 179, 0.1);
+    border-radius: 10px;
+    padding: 5px;
+    margin-top: 5px;
+} */
