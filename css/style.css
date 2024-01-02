@@ -2,6 +2,19 @@
     margin: 0;
 }
 
+.bg-color {
+    background-color: #2a2e36;
+}
+
+.bg-secondary {
+    background-color: #f7f7f7;
+}
+
+.fg-color {
+    color: #98C379;
+    font-weight: 500;
+}
+
 .pre-header {
     padding-top: 20px;
     padding-bottom: 20px;
