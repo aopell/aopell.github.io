@@ -12,7 +12,14 @@
 
 .fg-color {
     color: #98C379;
+}
+
+h3.fg-color {
     font-weight: 500;
+}
+
+.fg-white {
+    color: #DCDFE4;
 }
 
 .pre-header {
