@@ -1,85 +1,112 @@
+/* Base styles and layout */
+* {
+    box-sizing: border-box;
+    font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+:root {
+    --primary-color: #98C379;
+    --primary-color-dark: rgb(100, 148, 66);
+    --primary-color-light: #eaf3e3;
+    --text-dark: #2a2a2a;
+    --text-light: #DCDFE4;
+    --header-bg: #282C34;
+    --section-header-bg: hsl(220, 13%, 88%);
+    --border-color: #222222;
+}
+
+/* Media queries for responsive design */
 @media screen {
     body {
-        margin-left: 10%;
-        margin-right: 10%;
+        margin: 0;
+        padding: 10%;
+        background-color: #f5f5f5;
     }
 
-    #main {
-        border: 1px solid #222222;
+    .resume-container {
+        border: 1px solid var(--border-color);
         padding: 25px;
+        background-color: white;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
 }
 
 @media print {
     body {
+        margin: 0;
+        padding: 0;
+        background-color: white;
+    }
+    
+    .resume-container {
+        border: none;
+        padding: 0;
+        box-shadow: none;
     }
 }
 
-* {
-    font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-    --indigo: hsl(95, 38%, 42%);
-}
-
-.fg-color {
-    color: #98C379;
-    font-weight: 500;
-}
-
-.fg-white {
-    color: #DCDFE4;
-}
-
-.center {
-    text-align: center;
-}
-
-.bold {
-    font-weight: bold;
-}
-
-.sides {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 3px;
-    margin-top: 3px;
-}
-
-h3.sides {
-    background-color: hsl(220, 13%, 88%);
-}
-
-.half {
-    width: 50%;
-}
-
-header {
-    background-color: #282C34;
+/* Header styles */
+.resume-header {
+    background-color: var(--header-bg);
     color: white;
-    -webkit-print-color-adjust: exact !important;
     padding: 15px;
+    text-align: center;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
 }
 
-header p.center {
-    margin: 5px;
+.name {
+    color: var(--primary-color);
+    font-weight: 400;
+    margin: 0 0 4px 0;
+    font-size: 36px;
+}
+
+.tagline {
+    margin: 5px 0;
+    font-style: italic;
+}
+
+.contact-info {
+    margin: 5px 0;
     display: flex;
     justify-content: center;
-    align-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
-header p.center span {
-    width: 180px;
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    min-width: 180px;
+    justify-content: center;
 }
 
-header p.center span:first-child {
+.contact-item i {
+    width: 16px;
     text-align: center;
-    padding-right: 5px;
 }
 
-header p.center span:last-child {
-    text-align: center;
-    padding-left: 5px;
+.contact-item a {
+    color: white;
+    text-decoration: none;
+    padding-bottom: 3px;
 }
 
+.contact-item a:hover {
+    text-decoration: underline;
+}
+
+.position-info .date-range {
+    background-color: var(--primary-color-light);
+    border-radius: 5px;
+    padding: 2px 6px;
+    font-size: 80%;
+}
+
+/* Typography */
 h1 {
     font-weight: 400;
     margin: 0 0 4px 0;
@@ -87,7 +114,7 @@ h1 {
 }
 
 h2 {
-    color: var(--indigo);
+    color: var(--primary-color-dark);
     margin-bottom: 2px;
     font-weight: 700;
     margin-top: 5px;
@@ -97,76 +124,154 @@ h2 {
 
 h3 {
     font-weight: 700;
-    color: #2a2a2a;
-}
-
-b {
-    font-weight: 500;
-    color: #2a2a2a;
+    color: var(--text-dark);
+    margin: 3px 0;
 }
 
 p {
     margin-top: 3px;
 }
 
-ul {
-    padding-left: 20px;
-    padding-top: 3px;
-    padding-bottom: 3px;
-    margin-top: 2px;
+/* Section styles */
+.resume-section {
+    margin: 10px 0;
+}
+
+.section-title {
+    color: var(--primary-color-dark);
     margin-bottom: 2px;
-}
-
-li {
-    padding-top: 3px;
-    padding-bottom: 3px;
-}
-
-.section {
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-.item h3 {
-    margin-top: 3px;
-    margin-bottom: 3px;
-}
-
-#work-experience {
+    font-weight: 700;
+    margin-top: 5px;
+    font-size: 24px;
+    text-transform: uppercase;
     padding-top: 5px;
 }
 
-a {
-    color: white;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline white;
-}
-
-.two-cols {
+/* Common item layout styles */
+.item-header {
     display: flex;
-    gap: 10px;
+    justify-content: space-between;
+    align-items: baseline;
+    background-color: var(--section-header-bg);
+    padding: 0px 8px;
+    margin: 0;
 }
 
-.item {
-    flex: 50%;
+.position-info,
+.degree-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin: 3px 0;
+    font-weight: 500;
+    color: var(--text-dark);
 }
 
-.grid {
+.company-name,
+.institution-name,
+.project-name,
+.location {
+    font-weight: 700;
+    color: var(--text-dark);
+    margin: 0;
+}
+
+.position-title,
+.degree-title {
+    font-weight: 600;
+}
+
+/* List styles */
+.achievements {
+    padding-left: 20px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    margin: 2px 0;
+}
+
+.achievements li {
+    padding: 3px 0;
+}
+
+/* Education section specific styles */
+.education-item {
+    margin-bottom: 15px;
+}
+
+.coursework {
+    margin-top: 10px;
+}
+
+.coursework-label {
+    margin: 5px 0;
+    font-style: italic;
+}
+
+.coursework-grid {
     display: grid;
-    grid-template-columns: auto auto auto;
-}
-
-.bullets * {
-    display: list-item;
-    list-style-position: inside; 
-}
-
-/* .section > .item {
-    background-color: rgba(67, 80, 179, 0.1);
-    border-radius: 10px;
-    padding: 5px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 5px;
     margin-top: 5px;
-} */
+}
+
+.coursework-grid span {
+    display: list-item;
+    list-style-position: inside;
+    list-style-type: disc;
+    padding: 2px 0;
+}
+
+/* Skills section styles */
+.skills-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.skill-category {
+    flex: 1;
+    min-width: 300px;
+}
+
+.category-title {
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+}
+
+.skill-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.skill-level {
+    display: flex;
+    flex-direction: column;
+}
+
+.skill-level strong {
+    font-weight: 500;
+    color: var(--text-dark);
+    margin-bottom: 2px;
+}
+
+.skill-list {
+    line-height: 1.4;
+    margin-left: 10px;
+}
+
+/* Experience and project item styles */
+.experience-item,
+.project-item {
+    margin-bottom: 20px;
+}
+
+/* Legacy support and utilities */
+.center {
+    text-align: center;
+}
+
+.bold {
+    font-weight: bold;
+}

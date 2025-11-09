@@ -1,98 +1,143 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aaron Opell - Resume</title>
     <link type="text/css" rel="stylesheet" href="resume.css" media="screen,print" />
-    <link rel="icon" 
-      type="image/png" 
-      href="/imgs/terminal-icon-transparent-alt.png" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
+    <link rel="icon" type="image/png" href="/imgs/terminal-icon-transparent-alt.png" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
 </head>
 
 <body>
-    <div id="main">
-        <header id="header">
-            <h1 class="center fg-color">Aaron Opell</h1>
-            <!-- <p class="center ex-margin-btm">I'm a full stack developer with experience designing end-to-end systems and data-driven applications</p> -->
-            <p class="center fg-white">
-                <span><i class="fas fa-envelope"></i> <a href="mailto:aaron@aopell.me">aaron@aopell.me</a></span>
-                <span><i class="fas fa-phone-square-alt"></i> <a href="tel:+18188094738">(818) 809&middot;4738</a></span>
-            </p>
-            <p class="center fg-white">
-                <span><i class="fas fa-globe-americas"></i> <a href="https://aopell.me">https://aopell.me</a></span>
-                <span><i class="fab fa-linkedin"></i> <a
-                        href="https://linkedin.com/in/aopell">linkedin.com/in/aopell</a></span>
-                <span><i class="fab fa-github"></i> <a href="https://github.com/aopell">github.com/aopell</a></span>
-            </p>
+    <div class="resume-container">
+        <header class="resume-header">
+            <h1 class="name">Aaron Opell</h1>
+            <!-- <p class="tagline">I'm a full stack developer with experience designing end-to-end systems and data-driven applications</p> -->
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:aaron@aopell.me">aaron@aopell.me</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone-square-alt"></i>
+                    <a href="tel:+18188094738">(818) 809&middot;4738</a>
+                </div>
+            </div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-globe"></i>
+                    <a href="https://aopell.me">https://aopell.me</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <a href="https://linkedin.com/in/aopell">linkedin.com/in/aopell</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-github"></i>
+                    <a href="https://github.com/aopell">github.com/aopell</a>
+                </div>
+            </div>
         </header>
-        <div class="section">
-            <h2 id="work-experience">Work Experience</h2>
-            <div class="item">
-                <h3 class="sides">
-                    <span>Atlassian</span>
-                    <span>San Francisco, CA</span>
-                </h3>
-                <b class="sides">
-                    <span>Data Engineer II: AI & Platform</span>
-                    <span>April 2024 - <em>present</em></span>
-                </b>
-                <ul>
-                    <li>Built an end-to-end data pipeline processing analytics events for AI features to assess adoption and display trends to business stakeholders using Databricks SQL, Apache Airflow, and Tableau</li>
-                    <li>Scaled an AI-powered internal Slack bot (built with Python Flask) that surfaces similar questions in help channels from a single channel to over 20 channels, reducing engineering support load when on-call</li>
+        <section class="resume-section">
+            <h2 class="section-title">Work Experience</h2>
+            <div class="experience-item">
+                <div class="item-header">
+                    <h3 class="company-name">Atlassian</h3>
+                    <span class="location">San Francisco, CA</span>
+                </div>
+                <div class="position-info">
+                    <span class="position-title">Senior Data Engineer: Global Experiences</span>
+                    <span class="date-range">October 2025 - <em>present</em></span>
+                </div>
+                <ul class="achievements">
+                    <li>Designed a distributed tracing system to solve the challenge of tracking user acquisition by
+                        linking frontend behavioral events to backend identity platform audit logs</li>
+                    <li>Coordinated a 5-team, 3-month implementation and validation effort, successfully identifying the
+                        product flows driving the most user additions by administrators; built a data pipeline to
+                        measure the results on an ongoing basis</li>
+                    <li>Successfully migrated dozens of data assets and pipelines to a new platform, ensuring no
+                        operational downtime while increasing security and maintainability</li>
                 </ul>
-                <b class="sides">
-                    <span>Data Engineer: Company Metrics and Enterprise</span>
-                    <span>July 2022 - March 2024</span>
-                </b>
-                <ul>
-                    <li>Designed and built terabyte-scale data pipelines powering critical company metrics such as Monthly Active Users and Recurring Revenue using Databricks SQL and Airflow</li>
-                    <li>Updated and redesigned the Visual Studio Code extension for an internal data pipeline library using Typescript to improve developer productivity with easier codebase navigation, warning hints, and code generation</li>
-                    <li>Created a Python library to conduct automated unit testing of SQL pipelines using behavioral definitions written in the Gherkin language, providing a way to test at the SQL CTE level</li>
-                    <li>Integrated newly released and acquired products into existing pipelines and conducted thorough testing to ensure metrics published in the company's public financial reports were always up to date</li>
+                <div class="position-info">
+                    <span class="position-title">Data Engineer II: AI & Platform</span>
+                    <span class="date-range">April 2024 - September 2025</span>
+                </div>
+                <ul class="achievements">
+                    <li>Built an end-to-end data pipeline processing analytics events for AI features to assess adoption
+                        and display trends to business stakeholders using Databricks SQL, Apache Airflow, and Tableau
+                    </li>
+                    <li>Updated and redesigned the Visual Studio Code extension for an internal data pipeline library
+                        using Typescript to improve developer productivity with easier codebase navigation, warning
+                        hints, and code generation</li>
+                    <li>Scaled an LLM-powered internal RAG Slack bot (built with Python Flask) that surfaces similar
+                        questions in help channels from a single channel to over 20 channels, reducing engineering
+                        support load when on-call</li>
                 </ul>
-            </div>
-            <div class="item">
-                <h3 class="sides">
-                    <span>Dataherald</span>
-                    <span>San Francisco, CA</span>
-                </h3>
-                <b class="sides">
-                    <span>Software Engineer</span>
-                    <span>June 2020 - May 2022</span>
-                </b>
-                <ul>
-                    <li>Designed and developed the majority of the full stack for a data journalism tool using Python Flask, MongoDB, and PostgreSQL</li>
-                    <li>Architected a REST API providing journalists with the ability to customize their visualizations in online articles</li>
-                    <li>Maintained an Apache Airflow instance and other company infrastructure using S3, EC2, RDS, DocumentDB, Elasticache, and other AWS services</li>
-                    <li>Built an ETL data pipeline creation library using Python and Airflow, powering automated real-time updates for our data visualizations</li>
-                    <li>Enhanced team productivity by automating and streamlining Jira workflows, allowing quantitative tracking of engineering effectiveness</li>
-                    <!-- <li>Strategized weekly with the CEO and CTO to analyze patterns in user analytics and adjust development goals based on user behavior</li> -->
-                </ul>
-            </div>
-            <div class="item">
-                <h3 class="sides">
-                    <span>Amazon</span>
-                    <span>Sunnyvale, CA</span>
-                </h3>
-                <b class="sides">
-                    <span>Software Development Engineer Intern: Alexa Alarms Team</span>
-                    <span>June 2021 - August 2021</span>
-                </b>
-                <ul>
-                    <li>Designed a proposal for and planned the implementation of adding custom alarm names to alarms set via the Alexa voice assistant</li>
-                    <li>Collaborated with the Alexa Mobile team to integrate the named alarm features into the Alexa mobile app</li>
-                    <li>Conducted end-to-end testing of the feature on headless, multimodal, and mobile devices to ensure all behavior was correct</li>
+                <div class="position-info">
+                    <span class="position-title">Data Engineer: Company Metrics & Enterprise</span>
+                    <span class="date-range">July 2022 - March 2024</span>
+                </div>
+                <ul class="achievements">
+                    <li>Designed and built terabyte-scale data pipelines powering critical company metrics such as
+                        Monthly Active Users and Recurring Revenue using Databricks SQL and Airflow</li>
+                    <li>Created a Python library to conduct automated unit testing of SQL pipelines using behavioral
+                        definitions written in the Gherkin language, providing a way to test at the SQL CTE level</li>
+                    <li>Integrated newly released and acquired products into existing pipelines and conducted thorough
+                        testing to ensure metrics published in the company's public financial reports were always up to
+                        date</li>
                 </ul>
             </div>
-            <div class="item">
-                <h3 class="sides">
-                    <span>Great Minds Robotics</span>
-                    <span>Los Angeles, CA</span>
-                </h3>
-                <b class="sides">
-                    <span>Programming Instructor</span>
-                    <span>June 2017 - August 2019</span>
-                </b>
-                <ul>
+            <div class="experience-item">
+                <div class="item-header">
+                    <h3 class="company-name">Dataherald</h3>
+                    <span class="location">San Francisco, CA</span>
+                </div>
+                <div class="position-info">
+                    <span class="position-title">Software Engineer</span>
+                    <span class="date-range">June 2020 - May 2022</span>
+                </div>
+                <ul class="achievements">
+                    <li>Designed and developed the majority of the full stack for a data journalism tool using Python
+                        Flask, MongoDB, and PostgreSQL</li>
+                    <li>Architected a REST API providing journalists with the ability to customize their visualizations
+                        in online articles</li>
+                    <li>Maintained an Apache Airflow instance and other company infrastructure using S3, EC2, RDS,
+                        DocumentDB, Elasticache, and other AWS services</li>
+                    <li>Built an ETL data pipeline creation library using Python and Airflow, powering automated
+                        real-time updates for our data visualizations</li>
+                </ul>
+            </div>
+            <div class="experience-item">
+                <div class="item-header">
+                    <h3 class="company-name">Amazon</h3>
+                    <span class="location">Sunnyvale, CA</span>
+                </div>
+                <div class="position-info">
+                    <span class="position-title">Software Development Engineer Intern: Alexa Alarms Team</span>
+                    <span class="date-range">June 2021 - August 2021</span>
+                </div>
+                <ul class="achievements">
+                    <li>Designed a proposal for and planned the implementation of adding custom alarm names to alarms
+                        set via the Alexa voice assistant</li>
+                    <li>Collaborated with the Alexa Mobile team to integrate the named alarm features into the Alexa
+                        mobile app</li>
+                    <li>Conducted end-to-end testing of the feature on headless, multimodal, and mobile devices to
+                        ensure all behavior was correct</li>
+                </ul>
+            </div>
+            <div class="experience-item">
+                <div class="item-header">
+                    <h3 class="company-name">Great Minds Robotics</h3>
+                    <span class="location">Los Angeles, CA</span>
+                </div>
+                <div class="position-info">
+                    <span class="position-title">Programming Instructor</span>
+                    <span class="date-range">June 2017 - August 2019</span>
+                </div>
+                <ul class="achievements">
                     <li>Guided students in learning to write computer programs using languages such as C#, JavaScript,
                         C++, Java, and MS SQL</li>
                     <li>Leveraged knowledge of desktop, web, and database technologies to help students create websites,
@@ -103,129 +148,87 @@
                     <li>Assisted students by demonstrating best practices for testing, debugging, and verifying program
                         behavior
                     </li>
-                    <!-- <li>Additionally, taught an Arduino summer program featuring circuit building, C++ programming, and
-                        digital logic</li> -->
                 </ul>
             </div>
-        </div>
-        <div class="section">
-            <h2 id="education">Education</h2>
-            <div class="item">
-                <h3 class="sides">
-                    <span>University of California, Berkeley</span>
-                    <span>August 2018 - May 2022</span>
-                </h3>
-                <b class="sides">
-                    <span>B.A. Computer Science</span>
-                    <span>GPA: 3.7</span>
-                </b>
-                <div class="item"><em>Relevant Coursework:</em></div>
-                <div class="item grid bullets">
-                    <span>Efficient Algorithms and Intractable Problems</span>
-                    <span>Data Structures</span>
-                    <span>Computer Security</span>
-                    <span>Operating Systems and System Programming</span>
-                    <span>Artificial Intelligence</span>
-                    <span>Principles & Techniques of Data Science</span>
-                    <span>Structure and Interpretation of Computer Programs</span>
-                    <span>Machine Structures</span>
-                    <!-- <span>Discrete Mathematics and Probability Theory</span>
-                    <span>Designing Information Devices and Systems I & II</span> -->
-                    <span>Database Systems</span>
-                    <!-- <p><i>Relevant Coursework:</i>
-                        Efficient Algorithms and Intractable Problems &bull;
-                        Data Structures &bull;
-                        Computer Security &bull;
-                        Operating Systems and System Programming &bull;
-                        Artificial Intelligence &bull;
-                        Principles & Techniques of Data Science &bull;
-                        Database Systems &bull;
-                        Structure and Interpretation of Computer Programs &bull;
-                        Machine Structures &bull;
-                        Discrete Mathematics and Probability Theory &bull;
-                        Designing Information Devices and Systems I & II
-                    </p> -->
+        </section>
+        <section class="resume-section">
+            <h2 class="section-title">Education</h2>
+            <div class="education-item">
+                <div class="item-header">
+                    <h3 class="institution-name">University of California, Berkeley</h3>
+                    <span class="date-range">August 2018 - May 2022</span>
+                </div>
+                <div class="degree-info">
+                    <span class="degree-title">B.A. Computer Science</span>
+                    <span class="gpa">GPA: 3.7</span>
                 </div>
             </div>
-        </div>
-        <div class="section">
-            <h2 id="projects-and-activities">Projects and Accomplishments</h2>
-            <div class="item">
-                <h3 class="sides">
-                    <span>Schoology Plus Browser Extension</span>
-                    <span>December 2017 - <i>present</i></span>
-                </h3>
-                <ul>
+        </section>
+        <section class="resume-section">
+            <h2 class="section-title">Projects and Accomplishments</h2>
+            <div class="project-item">
+                <div class="item-header">
+                    <h3 class="project-name">Schoology Plus Browser Extension</h3>
+                    <span class="date-range">December 2017 - <i>present</i></span>
+                </div>
+                <ul class="achievements">
                     <li>Created and developed an open source browser extension (using HTML/CSS/TS) which provides new
                         features for and enhances existing capabilities of the learning management system Schoology
                         which allows students to interact with their grades and coursework online</li>
-                    <!-- <li>Implemented features such as "what-if" grade calculations, a customizable interface editor,
-                        theming engine, and improved UX</li> -->
-                    <li>Composed and maintained comprehensive documentation of features, providing clear and detailed
-                        instructions for complex capabilities</li>
-                    <li>Collected feedback by examining analytics, conducting surveys, and interacting with our users
-                        and contributors via an online chat community</li>
-                    <li>Reaches <strong>over 500,000 monthly users</strong> (and growing!) from hundreds of schools
-                        across the world</li>
+                    <li>Maintained comprehensive documentation and gathered user feedback through analytics, surveys,
+                        and an online chat community to guide development</li>
+                    <li>Grew the extension to reach over <strong>600,000 monthly users</strong> across hundreds of
+                        schools worldwide</li>
                 </ul>
             </div>
-            <div class="item">
-                <h3 class="sides">
-                    <span>CyberPatriot Cyber Defense Competition</span>
-                    <span>September 2014 - June 2018</span>
-                </h3>
-                <ul>
-                    <li>Secured virtual machines running Windows and Linux desktop and server operating systems by
-                        identifying and fixing
-                        a variety of security vulnerabilities during a timed competition</li>
-                    <li>Created and tested scripts (in C#, Batch, and Bash) to automate tedious tasks and assist team
-                        members in setting and verifying security policies
-                    </li>
-                    <li>Devised strategies with team members to successfully defend our virtual systems from an
-                        attacking red team during the national finals
-                    </li>
-                    <li><b>Achievements:</b>
-                        <ul>
-                            <li>Placed 2nd from among over 3000 teams in the national CyberPatriot competition (2018)
-                            </li>
-                            <li>Placed 1st (2018, 2016) and 2nd (2017) in the California Cyber Innovation Challenge, a
-                                state sponsored competition</li>
-                        </ul>
-                    </li>
+            <div class="project-item">
+                <div class="item-header">
+                    <h3 class="project-name">CyberPatriot Cyber Defense Competition</h3>
+                    <span class="date-range">September 2014 - June 2018</span>
+                </div>
+                <ul class="achievements">
+                    <li>Identified and remediated security vulnerabilities on Windows and Linux systems in a timed
+                        competition, utilizing C#, Batch, and Bash scripts to automate security tasks</li>
+                    <li>Achieved 2nd place nationally out of 3,000+ teams and won multiple state-level championships by
+                        devising strategies to defend virtual systems against a live attacking red team</li>
                 </ul>
             </div>
-        </div>
-        <div class="section">
-            <h2 id="skills">Skills</h2>
-            <div class="two-cols">
-                <div class="item">
-                    <h3>Programming Languages</h3>
-                    <div>
-                        <div>
-                            <b>Proficient: </b>
-                            <span>Python &bull; JavaScript/TypeScript &bull; C# &bull; Java &bull; SQL</span>
+        </section>
+        <section class="resume-section">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3 class="category-title">Programming Languages</h3>
+                    <div class="skill-group">
+                        <div class="skill-level">
+                            <strong>Proficient: </strong>
+                            <span class="skill-list">Python &bull; JavaScript/TypeScript &bull; C# &bull; Java &bull;
+                                SQL</span>
                         </div>
-                        <div>
-                            <b>Working Knowledge:</b>
-                            <span>C &bull; C++ &bull; Bash &bull; RISC-V Assembly &bull; Go &bull; Scheme</p>
+                        <div class="skill-level">
+                            <strong>Working Knowledge:</strong>
+                            <span class="skill-list">C &bull; C++ &bull; Bash &bull; RISC-V Assembly &bull; Go &bull;
+                                Scheme</span>
                         </div>
                     </div>
                 </div>
-                <div class="item">
-                    <h3>Development Tools</h3>
-                    <div>
-                        <div>
-                            <b>Technologies: </b>
-                            <span>HTML &bull; CSS &bull; AWS/GCP &bull; MongoDB &bull; PostgreSQL &bull; Git</span>
+                <div class="skill-category">
+                    <h3 class="category-title">Development Tools</h3>
+                    <div class="skill-group">
+                        <div class="skill-level">
+                            <strong>Technologies: </strong>
+                            <span class="skill-list">HTML &bull; CSS &bull; MongoDB &bull; PostgreSQL
+                                &bull; Git</span>
                         </div>
-                        <div>
-                            <b>Frameworks:</b>
-                            <span>Node.js &bull; Flask &bull; ASP.NET &bull; Spark &bull; Databricks</span>
+                        <div class="skill-level">
+                            <strong>Frameworks / Platforms:</strong>
+                            <span class="skill-list">Node.js &bull; Flask &bull; ASP.NET &bull; Spark &bull;
+                                Databricks &bull; AWS/GCP</span>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     </div>
 </body>
 
