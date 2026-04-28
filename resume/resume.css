@@ -251,7 +251,7 @@ p {
 }
 
 .skill-level strong {
-    font-weight: 500;
+    font-weight: 600;
     color: var(--text-dark);
     margin-bottom: 2px;
 }
